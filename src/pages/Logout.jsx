@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { logout } from "../api/api";
+import { logout } from "../api/auth";
 
 export default function Logout() {
 
@@ -15,8 +15,11 @@ export default function Logout() {
     }
   }
   return (
-    <button className="btn btn-primary" onClick={handleSubmit}>
+    // <button className="btn btn-primary" onClick={handleSubmit}>
+    //   Sair
+    // </button>
+    <a className="dropdown-item" href="#" onClick={handleSubmit}>
       Sair
-    </button>
+    </a>
   );
 }
