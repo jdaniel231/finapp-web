@@ -31,6 +31,17 @@ function Sidebar() {
             Clientes
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              'nav-link text-white' + (isActive ? ' active' : '')
+            }
+          >
+            <i className="fas fa-briefcase me-2"></i>
+            Serviços
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
