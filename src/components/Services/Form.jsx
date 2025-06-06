@@ -1,56 +1,56 @@
-import { useState, useEffect } from "react";
+import {  useEffect, useState } from "react";
 
-export default function ClientForm({ initialData = {}, onSubmit, submitLabel = "Criar" }) {
-
+export default function ServiceForm({initialData = {}, onSubmit, submitLabel = "Criar"}) {
   
   const [name, setName] = useState(initialData?.name || "");
-  const [phone, setPhone] = useState(initialData?.phone || "");
-  // const navigate = useNavigate();
+  const [value, setValue] = useState(initialData?.value || "");
 
   useEffect(() => {
     if (initialData) {
       setName(initialData.name || "");
-      setPhone(initialData.phone || "");
+      setValue(initialData.value || "");
     } else {
       setName("");
-      setPhone("");
+      setValue("");
     }
   }, [initialData]);
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const clientData = { name, phone };
+    const serviceData = { name, value };
     try {
-      await onSubmit(clientData);
+      await onSubmit(serviceData);
     } catch (error) {
-      console.error("Erro ao salvar cliente:", error);
-      alert("Erro ao salvar cliente.");
+      console.error("Erro ao salvar serviço:", error);
+      alert("Erro ao salvar serviço.");
     }
-  };
+  }
 
+  
   return (
-    <div className="clients-container">
-      <h2>{submitLabel === "Criar" ? "Novo Cliente" : "Editar Cliente"}</h2>
+    <div className="service-form-container">
+      <h2>{submitLabel === "Criar" ? "Novo Serviço" : "Editar Serviço"}</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Nome</label>
           <input
             type="text"
             className="form-control"
-            placeholder="Digite o nome do cliente"
+            placeholder="Digite o nome do serviço"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
         <div className="mb-3">
-          <label className="form-label">Telefone</label>
+          <label className="form-label">Valor</label>
           <input
             type="text"
             className="form-control"
-            placeholder="Digite o telefone do cliente"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            placeholder="Digite o valor do serviço"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
             required
           />
         </div>

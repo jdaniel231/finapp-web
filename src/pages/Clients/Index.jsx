@@ -60,7 +60,7 @@ export default function Clients() {
                 <td>{client.phone}</td>
                 <td>
                   {/* Link para edição - Verifique se a rota está correta */}
-                  <a href={`/clients/${client.id}`} className="btn btn-primary btn-sm me-2" title="Editar">
+                  <a href={`/clients/edit/${client.id}`} className="btn btn-primary btn-sm me-2" title="Editar">
                     <i className="fas fa-edit"></i>
                   </a>
                   <button
