@@ -42,6 +42,17 @@ function Sidebar() {
             Serviços
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/payment_types"
+            className={({ isActive }) =>
+              'nav-link text-white' + (isActive ? ' active' : '')
+            }
+          >
+            <i className="fas fa-money-bill-wave me-2"></i>
+            Tipos de Pagamento
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
