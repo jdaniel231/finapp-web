@@ -10,6 +10,9 @@ import ProtectedLayout from "./components/ProtectedLayout"
 import Services from "./pages/Services/Index"
 import ServiceNew from "./pages/Services/New"
 import ServiceEdit from "./pages/Services/Edit"
+import PaymentTypes from "./pages/PaymentTypes/Index"
+import PaymentTypeNew from "./pages/PaymentTypes/New"
+import PaymentTypeEdit from "./pages/PaymentTypes/Edit"
 
 
 function App() {
@@ -33,6 +36,9 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/services/new" element={<ServiceNew />} />
           <Route path="/services/edit/:id" element={<ServiceEdit />} />
+          <Route path="/payment_types" element={<PaymentTypes />} />
+          <Route path="/payment_types/new" element={<PaymentTypeNew />} />
+          <Route path="/payment_types/edit/:id" element={<PaymentTypeEdit />} />
           <Route path="*" element={<h1>404 - Página não encontrada</h1>} />
         </Route>
       </Routes>
