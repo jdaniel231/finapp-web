@@ -53,6 +53,17 @@ function Sidebar() {
             Tipos de Pagamento
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/account_pay"
+            className={({ isActive }) =>
+              'nav-link text-white' + (isActive ? ' active' : '')
+            }
+          >
+            <i className="fas fa-credit-card me-2"></i>
+            Contas a Pagar
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
