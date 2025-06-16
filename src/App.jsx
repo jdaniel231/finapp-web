@@ -15,8 +15,11 @@ import PaymentTypeNew from "./pages/PaymentTypes/New"
 import PaymentTypeEdit from "./pages/PaymentTypes/Edit"
 import TicketsNew from "./pages/Tickets/New"
 import TicketsClient from "./pages/Clients/TicketsClient"
-import TicketShow from "./pages/Tickets/Show"
-import TicketEdit from "./pages/Tickets/Edit"
+// import TicketShow from "./pages/Tickets/Show"
+import AccountPay from "./pages/AccountPay/Index"
+import AccountPayNew from "./pages/AccountPay/New"
+import AccountPayEdit from "./pages/AccountPay/Edit"
+
 
 
 function App() {
@@ -44,8 +47,9 @@ function App() {
           <Route path="/payment_types/new" element={<PaymentTypeNew />} />
           <Route path="/payment_types/edit/:id" element={<PaymentTypeEdit />} />
           <Route path="/clients/:id/tickets/new" element={<TicketsNew />} />
-          <Route path="/tickets/:id/show" element={<TicketShow />} />
-          {/* <Route path="/tickets/:id/edit" element={<TicketEdit />} /> */}
+          <Route path="/account_pay" element={<AccountPay />} />
+          <Route path="/account_pay/new" element={<AccountPayNew />} />
+          <Route path="/account_pay/edit/:id" element={<AccountPayEdit />} />
           <Route path="*" element={<h1>404 - Página não encontrada</h1>} />
         </Route>
       </Routes>

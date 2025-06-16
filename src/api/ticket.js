@@ -30,7 +30,13 @@ export const deleteTicket = async (id) => {
         Authorization: token
       }
     });
+    // Não precisa retornar nada, apenas não lançar erro
   } catch (error) {
+    // Só mostre erro se realmente for erro de rede ou status >= 400
+    if (error.response && (error.response.status === 200 || error.response.status === 204)) {
+      // Considera sucesso silencioso
+      return;
+    }
     console.error('Erro ao excluir ticket:', error);
     throw error;
   }
