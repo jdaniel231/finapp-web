@@ -91,3 +91,21 @@ export const getClient = async (id) => {
     throw error; // Re-throw the error to be handled by the caller
   }
 };
+
+export const getTicketsClient = async (clientId) => {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token) throw new Error('Token não encontrado');
+
+    const { data } = await axios.get(`${BASE_URL}/tickets?client_id=${clientId}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token
+      }
+    });
+    return data;
+  } catch (error) {
+    console.error('Erro ao buscar tickets:', error);
+    throw error; // Re-throw the error to be handled by the caller
+  }
+};

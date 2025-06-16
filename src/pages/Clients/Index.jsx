@@ -21,19 +21,19 @@ export default function Clients() {
     fetchClients();
   }, []);
 
- const handleDelete = async (id, name) => {
-  const confirmDelete = window.confirm(`Tem certeza que deseja excluir o cliente "${name}"?`);
-  if (!confirmDelete) return;
+  const handleDelete = async (id, name) => {
+    const confirmDelete = window.confirm(`Tem certeza que deseja excluir o cliente "${name}"?`);
+    if (!confirmDelete) return;
 
-  try {
-    await deleteClient(id);
-    alert('Cliente excluído com sucesso!');
-    setClients(clients.filter(client => client.id !== id));
-  } catch (error) {
-    console.error('Erro ao excluir cliente:', error);
-    alert(`Erro ao excluir o cliente "${name}". Tente novamente.`);
-  }
-};
+    try {
+      await deleteClient(id);
+      alert('Cliente excluído com sucesso!');
+      setClients(clients.filter(client => client.id !== id));
+    } catch (error) {
+      console.error('Erro ao excluir cliente:', error);
+      alert(`Erro ao excluir o cliente "${name}". Tente novamente.`);
+    }
+  };
 
   return (
     <div className="clients-container">
@@ -70,6 +70,12 @@ export default function Clients() {
                   >
                     <i className="fas fa-trash"></i>
                   </button>
+                  <a href={`/clients/${client.id}/tickets`} className="btn btn-info btn-sm ms-2" title="Tickets">
+                    <i className="fas fa-eye"></i>
+                  </a>
+                  <a href={`/clients/${client.id}/tickets/new`} className="btn btn-info btn-sm ms-2" title="Tickets">
+                    <i className="fas fa-ticket-alt"></i>
+                  </a>
                 </td>
               </tr>
             ))}
