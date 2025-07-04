@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAccountPay } from "../../api/account_pay";
 
-export default function AccountPayTotal() {
+export default function AccountPayPaid() {
 
   const [account, setAccount] = useState([]);
 
@@ -20,15 +20,13 @@ export default function AccountPayTotal() {
   }
   , []);
 
-  // const total = account.reduce((sum, item) => sum + Number(item.value || 0), 0);
-
   const total = account
-    .filter(item => item.status === "pending")
+    .filter(item => item.status === "paid")
     .reduce((sum, item) => sum + Number(item.value || 0), 0)
   
   return (
     <div>
-      <h5 className="card-title text-primary">Total a Pagar</h5>
+      <h5 className="card-title text-success">Total Pago</h5>
       <p className="card-text fs-4 fw-bold"> {total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>
     </div>
   );

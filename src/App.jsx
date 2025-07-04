@@ -19,6 +19,8 @@ import TicketsClient from "./pages/Clients/TicketsClient"
 import AccountPay from "./pages/AccountPay/Index"
 import AccountPayNew from "./pages/AccountPay/New"
 import AccountPayEdit from "./pages/AccountPay/Edit"
+import ListToPay from "./pages/AccountPay/ListToPay"
+import ListPaid from "./pages/AccountPay/ListPaid"
 
 
 
@@ -50,6 +52,8 @@ function App() {
           <Route path="/account_pay" element={<AccountPay />} />
           <Route path="/account_pay/new" element={<AccountPayNew />} />
           <Route path="/account_pay/edit/:id" element={<AccountPayEdit />} />
+          <Route path="/account_pay/to_pay" element={<ListToPay />} />
+          <Route path="/account_pay/paid" element={<ListPaid />} />
           <Route path="*" element={<h1>404 - Página não encontrada</h1>} />
         </Route>
       </Routes>
