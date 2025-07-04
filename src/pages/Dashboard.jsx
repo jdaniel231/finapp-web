@@ -1,4 +1,6 @@
-import AccountPay from "./AccountPay/IndexTotal";
+import { Link } from "react-router-dom";
+import AccountPayTotal from "./AccountPay/IndexTotal";
+import AccountPayPaid from "./AccountPay/IndexPaid";
 
 export default function Dashboard() {
   return (
@@ -11,25 +13,27 @@ export default function Dashboard() {
       {/* KPI Cards */}
       <div className="row mb-4">
         <div className="col-md-4">
-          <div className="card text-center">
-            <div className="card-body">
-              <h5 className="card-title text-primary">Total a Pagar</h5>
-              <p className="card-text fs-4 fw-bold">R$ 1.234,56</p>
+          <Link to="/account_pay/to_pay" className="text-decoration-none">
+            <div className="card text-center">
+              <div className="card-body">
+                <AccountPayTotal />
+              </div>
             </div>
-          </div>
+          </Link>
+        </div>
+        <div className="col-md-4">
+          <Link to="/account_pay/paid" className="text-decoration-none">
+            <div className="card text-center">
+              <div className="card-body">
+                <AccountPayPaid />
+              </div>
+            </div>
+          </Link>
         </div>
         <div className="col-md-4">
           <div className="card text-center">
             <div className="card-body">
-              <h5 className="card-title text-success">Total Pago</h5>
-              <p className="card-text fs-4 fw-bold">R$ 7.890,12</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div className="card text-center">
-            <div className="card-body">
-              <h5 className="card-title text-danger">Saldo Pendente</h5>
+              <h5 className="card-title text-danger">Saldo</h5>
               <p className="card-text fs-4 fw-bold">R$ 345,67</p>
             </div>
           </div>
@@ -51,7 +55,7 @@ export default function Dashboard() {
       </div>
 
       {/* Recent Transactions */}
-      <AccountPay />
+      
     </div>
   );
 }
