@@ -36,14 +36,18 @@ export default function Clients() {
   };
 
   return (
-    <div className="clients-container">
-      <h2>Clientes</h2>
-      <a href="/clients/new" className="btn btn-success mb-3">
-        <i className="fas fa-plus"></i> Adicionar Cliente
-      </a>
+    <div className="card">
+      <div className="card-header">
+        <h2 className="card-title">Clientes</h2>
+      </div>
+      <div className="card-body">
+        <a href="/clients/new" className="btn btn-success mb-3">
+          <i className="fas fa-plus"></i> Adicionar Cliente
+        </a>
       {/* Adicionar verificação se clients está vazio ou carregando */}
       {clients.length > 0 ? (
-        <table className="table table-striped">
+          <div className="table-responsive">
+            <table className="table table-striped">
           <thead>
             <tr>
               <th>COD. CLIENTE</th>
@@ -81,11 +85,11 @@ export default function Clients() {
             ))}
           </tbody>
         </table>
-      ) : (
-        <p>Nenhum cliente encontrado ou carregando...</p> // Mensagem alternativa
-      )}
-      {/* Adicionar um botão para criar novo cliente, se aplicável */}
-      {/* <button onClick={() => navigate('/clients/new')}>Adicionar Cliente</button> */}
+          </div>
+        ) : (
+          <p>Nenhum cliente encontrado ou carregando...</p> // Mensagem alternativa
+        )}
+      </div>
     </div>
   );
 }

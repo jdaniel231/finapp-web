@@ -69,6 +69,9 @@ export default function AccountPayForm({ initialData = {}, onSubmit, submitLabel
         <button type="submit" className="btn btn-primary">
           {submitLabel}
         </button>
+        <button type="button" className="btn btn-secondary" onClick={() => window.history.back()}>
+          Cancelar
+        </button>
       </form>
     </div>
   );

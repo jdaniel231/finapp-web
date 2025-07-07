@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from './Hearder';
+import Header from './Header';
 
 export default function ProtectedLayout() {
   return (
@@ -8,7 +8,9 @@ export default function ProtectedLayout() {
       <div id="content">
         <Header />
         <main className="p-4">
-          <Outlet />
+          <div className="container-fluid">
+            <Outlet />
+          </div>
         </main>
       </div>
     </div>

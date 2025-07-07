@@ -55,9 +55,10 @@ export default function ListToPay() {
     <div>
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="mb-0">Contas a Pagar</h2>
-        <button className="btn btn-secondary" onClick={() => navigate('/dashboard')}>
-          <i className="fas fa-arrow-left me-2"></i> Voltar
-        </button>
+        
+        <button className="btn btn-primary" onClick={() => navigate('/account_pay/new')}>
+          <i className="fas fa-plus"></i> 
+          </button>
       </div>
       {accounts.length === 0 ? (
         <p>Nenhuma conta a pagar encontrada.</p>
