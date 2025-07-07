@@ -21,6 +21,7 @@ import AccountPayNew from "./pages/AccountPay/New"
 import AccountPayEdit from "./pages/AccountPay/Edit"
 import ListToPay from "./pages/AccountPay/ListToPay"
 import ListPaid from "./pages/AccountPay/ListPaid"
+import RedeCard from "./pages/RedeCard/Index"
 
 
 
@@ -54,6 +55,8 @@ function App() {
           <Route path="/account_pay/edit/:id" element={<AccountPayEdit />} />
           <Route path="/account_pay/to_pay" element={<ListToPay />} />
           <Route path="/account_pay/paid" element={<ListPaid />} />
+          <Route path="/redecard" element={<RedeCard />} />
+          {/* Adicione outras rotas protegidas aqui */}
           <Route path="*" element={<h1>404 - Página não encontrada</h1>} />
         </Route>
       </Routes>

@@ -40,6 +40,7 @@ export default function Header() {
               </a>
               <ul className="dropdown-menu shadow rounded-3"> {/* Added shadow and rounded-3 */}
                 <li><NavLink className="dropdown-item" to="/account_pay">Contas a Pagar</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/redecard">Venda Maquininha</NavLink></li>
               </ul>
             </li>
           </ul>

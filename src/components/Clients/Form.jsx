@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ClientForm({ initialData = {}, onSubmit, submitLabel = "Criar" }) {
 
   
   const [name, setName] = useState(initialData?.name || "");
   const [phone, setPhone] = useState(initialData?.phone || "");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (initialData) {
@@ -57,6 +58,9 @@ export default function ClientForm({ initialData = {}, onSubmit, submitLabel = "
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
             {submitLabel}
+          </button>
+          <button type="button" className="btn btn-secondary" onClick={() => navigate('/clients')}>
+            Cancelar
           </button>
         </div>
       </form>

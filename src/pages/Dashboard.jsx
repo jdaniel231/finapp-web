@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import AccountPayTotal from "./AccountPay/IndexTotal";
 import AccountPayPaid from "./AccountPay/IndexPaid";
+import ListBalance from "./RedeCard/ListBalance";
+import RedeCard from './RedeCard/Index';
+import RedeCardBalanceTotal from "./RedeCard/BalanceTotal";
+import RedeCardBalanceDaily from "./RedeCard/BalanceDaily";
 
 export default function Dashboard() {
   return (
@@ -12,7 +16,7 @@ export default function Dashboard() {
 
       {/* KPI Cards */}
       <div className="row mb-4">
-        <div className="col-md-4">
+        <div className="col-md-3">
           <Link to="/account_pay/to_pay" className="text-decoration-none">
             <div className="card text-center">
               <div className="card-body">
@@ -21,7 +25,7 @@ export default function Dashboard() {
             </div>
           </Link>
         </div>
-        <div className="col-md-4">
+        <div className="col-md-3">
           <Link to="/account_pay/paid" className="text-decoration-none">
             <div className="card text-center">
               <div className="card-body">
@@ -30,26 +34,35 @@ export default function Dashboard() {
             </div>
           </Link>
         </div>
-        <div className="col-md-4">
-          <div className="card text-center">
-            <div className="card-body">
-              <h5 className="card-title text-danger">Saldo</h5>
-              <p className="card-text fs-4 fw-bold">R$ 345,67</p>
+        <div className="col-md-3">
+          <Link to="/redecard" className="text-decoration-none">
+            <div className="card text-center">
+              <div className="card-body">
+                <RedeCardBalanceTotal />
+              </div>
             </div>
-          </div>
+          </Link>
+        </div>
+        <div className="col-md-3">
+          <Link to="/redecard" className="text-decoration-none">
+            <div className="card text-center">
+              <div className="card-body">
+                <RedeCardBalanceDaily />
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
 
       {/* Financial Chart */}
       <div className="card mb-4">
         <div className="card-header">
-          <h5 className="card-title mb-0">Visão Geral Financeira</h5>
+          <h5 className="card-title mb-0">Transações de Rede(Itau)</h5>
         </div>
         <div className="card-body">
           {/* Placeholder for a chart library like Chart.js or Recharts */}
           <div className="text-center py-5">
-            <i className="fas fa-chart-line fa-3x text-muted"></i>
-            <p className="mt-2 text-muted">Gráfico em breve</p>
+            <ListBalance />
           </div>
         </div>
       </div>
